@@ -8,9 +8,8 @@ import org.openqa.selenium.support.ui.Select;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class DropdownPage {
+public class DropdownPage extends BasePage {
 
-    private WebDriver driver;
     private By dropdown = By.id("dropdown");
 
     public DropdownPage(WebDriver driver) {

@@ -3,9 +3,8 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class LoginPage {
+public class LoginPage extends BasePage {
 
-    private WebDriver driver;
     private By loginButton = By.cssSelector("#login button");
     private By usernameField = By.id("username");
     private By passwordField = By.id("password");
