@@ -13,6 +13,11 @@ public class HomePage extends BasePage {
         driver.findElement(By.linkText(linkText)).click();
     }
 
+    public AlertsPage clickJavaScriptAlerts(){
+        clickLink("JavaScript Alerts");
+        return new AlertsPage(driver);
+    }
+
     public DropdownPage clickDropDown() {
         clickLink("Dropdown");
         return new DropdownPage(driver);
