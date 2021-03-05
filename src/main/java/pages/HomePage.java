@@ -18,6 +18,11 @@ public class HomePage extends BasePage {
         return new DropdownPage(driver);
     }
 
+    public HoversPage clickHovers(){
+        clickLink("Hovers");
+        return new HoversPage(driver);
+    }
+
     public LoginPage clickFormAuthentication() {
         clickLink("Form Authentication");
         return new LoginPage(driver);
