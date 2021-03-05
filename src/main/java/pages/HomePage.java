@@ -23,6 +23,11 @@ public class HomePage extends BasePage {
         return new HoversPage(driver);
     }
 
+    public KeyPressesPage clickKeyPresses(){
+        clickLink("Key Presses");
+        return new KeyPressesPage(driver);
+    }
+
     public LoginPage clickFormAuthentication() {
         clickLink("Form Authentication");
         return new LoginPage(driver);
