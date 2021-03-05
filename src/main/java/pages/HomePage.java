@@ -23,6 +23,11 @@ public class HomePage extends BasePage {
         return new DropdownPage(driver);
     }
 
+    public FileUploadPage clickFileUpload(){
+        clickLink("File Upload");
+        return new FileUploadPage(driver);
+    }
+
     public HoversPage clickHovers(){
         clickLink("Hovers");
         return new HoversPage(driver);
