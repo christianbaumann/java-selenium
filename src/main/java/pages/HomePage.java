@@ -42,4 +42,9 @@ public class HomePage extends BasePage {
         clickLink("Form Authentication");
         return new LoginPage(driver);
     }
+
+    public WysiwygEditorPage clickWysiwygEditor(){
+        clickLink("WYSIWYG Editor");
+        return new WysiwygEditorPage(driver);
+    }
 }
