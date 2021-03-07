@@ -9,10 +9,6 @@ public class HomePage extends BasePage {
         this.driver = driver;
     }
 
-    public void clickLink(String linkText) {
-        driver.findElement(By.linkText(linkText)).click();
-    }
-
     public AlertsPage clickJavaScriptAlerts() {
         clickLink("JavaScript Alerts");
         return new AlertsPage(driver);
@@ -41,6 +37,11 @@ public class HomePage extends BasePage {
     public ForgotPasswordPage clickForgotPassword() {
         clickLink("Forgot Password");
         return new ForgotPasswordPage(driver);
+    }
+
+    public FramesPage clickFramesPage() {
+        clickLink("Frames");
+        return new FramesPage(driver);
     }
 
     public HorizontalSliderPage clickHorizontalSlider() {

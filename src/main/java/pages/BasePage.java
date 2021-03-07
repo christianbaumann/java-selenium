@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class BasePage {
@@ -20,6 +21,10 @@ public class BasePage {
 
     public void alert_setInput(String text) {
         driver.switchTo().alert().sendKeys(text);
+    }
+
+    public void clickLink(String linkText) {
+        driver.findElement(By.linkText(linkText)).click();
     }
 
 }
