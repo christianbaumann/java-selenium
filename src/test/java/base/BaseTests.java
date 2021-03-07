@@ -24,6 +24,12 @@ public class BaseTests {
         // Implicit wait
         // driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
+        // Page load timeout
+        // driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+
+        // Script timeout
+        // driver.manage().timeouts().setScriptTimeout(30, TimeUnit.SECONDS);
+
         // 1 - Maximize the window
         // driver.manage().window().maximize();
 
