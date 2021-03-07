@@ -1,10 +1,7 @@
 package base;
 
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
@@ -40,6 +37,8 @@ public class BaseTests {
 
         goHome();
 
+//        setCookie();
+
         // Implicit wait
         // driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
@@ -58,9 +57,6 @@ public class BaseTests {
         // 3 - Specific width (show Chrome iPhoneX emulator)
         // Dimension size = new Dimension(375, 812);
         // driver.manage().window().setSize(size);
-
-        homePage = new HomePage(driver);
-        goHome();
     }
 
     @BeforeMethod
@@ -97,5 +93,12 @@ public class BaseTests {
         options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
 //        options.setHeadless(true);
         return options;
+    }
+
+    private void setCookie(){
+        Cookie cookie = new Cookie.Builder("chriss", "baumann")
+                .domain("the-internet.herokuapp.com")
+                .build();
+        driver.manage().addCookie(cookie);
     }
 }
