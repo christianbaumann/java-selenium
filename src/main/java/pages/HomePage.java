@@ -18,6 +18,11 @@ public class HomePage extends BasePage {
         return new AlertsPage(driver);
     }
 
+    public ContextMenuPage clickContextMenuPage() {
+        clickLink("Context Menu");
+        return new ContextMenuPage(driver);
+    }
+
     public DropdownPage clickDropDown() {
         clickLink("Dropdown");
         return new DropdownPage(driver);
