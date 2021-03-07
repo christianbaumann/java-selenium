@@ -38,6 +38,11 @@ public class HomePage extends BasePage {
         return new ForgotPasswordPage(driver);
     }
 
+    public HorizontalSliderPage clickHorizontalSlider() {
+        clickLink("Horizontal Slider");
+        return new HorizontalSliderPage(driver);
+    }
+
     public HoversPage clickHovers() {
         clickLink("Hovers");
         return new HoversPage(driver);

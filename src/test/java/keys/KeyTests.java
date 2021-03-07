@@ -9,7 +9,7 @@ import static org.testng.Assert.assertEquals;
 public class KeyTests extends BaseTests {
 
     @Test
-    public void testBackspace(){
+    public void testBackspace() {
         var keyPage = homePage.clickKeyPresses();
 
         keyPage.enterText("A" + Keys.BACK_SPACE);
@@ -18,11 +18,22 @@ public class KeyTests extends BaseTests {
     }
 
     @Test
-    public void testPi(){
+    public void testPi() {
         var keyPage = homePage.clickKeyPresses();
 
         keyPage.enterPi();
 
         assertEquals(keyPage.getResult(), "You entered: 4");
+    }
+
+    @Test
+    public void testHorizontalSlider() {
+        int valueToBeSet = 3;
+
+        var horizontalSliderPage = homePage.clickHorizontalSlider();
+
+        horizontalSliderPage.moveSliderRight(valueToBeSet);
+
+        assertEquals(horizontalSliderPage.sliderValue(), String.valueOf(valueToBeSet));
     }
 }
