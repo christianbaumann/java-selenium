@@ -1,14 +1,19 @@
 package base;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.Dimension;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.*;
 import pages.HomePage;
 import utils.WindowManager;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.concurrent.TimeUnit;
 
 public class BaseTests {
@@ -46,17 +51,29 @@ public class BaseTests {
     }
 
     @BeforeMethod
-    public void goHome(){
+    public void goHome() {
         driver.get("https://the-internet.herokuapp.com/");
         homePage = new HomePage(driver);
     }
 
-    public WindowManager getWindowManager(){
+    public WindowManager getWindowManager() {
         return new WindowManager(driver);
     }
 
+    @AfterMethod
+    public void takeScreenshot() {
+        var camera = (TakesScreenshot) driver;
+        File screenshot = camera.getScreenshotAs(OutputType.FILE);
+        File destinationFile = new File("resources/screenshots/test.png");
+        try {
+            FileUtils.copyFile(screenshot, destinationFile);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     @AfterClass
-    public void tearDown(){
+    public void tearDown() {
         driver.quit();
     }
 }
