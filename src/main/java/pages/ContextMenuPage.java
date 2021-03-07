@@ -16,12 +16,4 @@ public class ContextMenuPage extends BasePage {
         Actions actions = new Actions(driver);
         actions.contextClick(driver.findElement(hotSpot)).perform();
     }
-
-    public String getAlertText() {
-        return driver.switchTo().alert().getText();
-    }
-
-    public void acceptPopUp() {
-        driver.switchTo().alert().accept();
-    }
 }

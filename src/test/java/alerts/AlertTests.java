@@ -29,7 +29,7 @@ public class AlertTests extends BaseTests {
         var alertsPage = homePage.clickJavaScriptAlerts();
         alertsPage.triggerPrompt();
 
-        String text = "TAU rocks!";
+        String text = "Chriss Baumann";
         alertsPage.alert_setInput(text);
         alertsPage.alert_clickToAccept();
         assertEquals(alertsPage.getResult(), "You entered: " + text, "Results text incorrect");
@@ -40,8 +40,8 @@ public class AlertTests extends BaseTests {
         var contextMenuPage = homePage.clickContextMenuPage();
 
         contextMenuPage.rightClickHotSpot();
-        String message = contextMenuPage.getAlertText();
-        contextMenuPage.acceptPopUp();
+        String message = contextMenuPage.alert_getText();
+        contextMenuPage.alert_clickToAccept();
 
         assertEquals(message, "You selected a context menu", "Alert text incorrect");
     }
