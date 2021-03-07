@@ -8,6 +8,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import pages.HomePage;
 
+import java.util.concurrent.TimeUnit;
+
 public class BaseTests {
 
     private WebDriver driver;
@@ -19,15 +21,18 @@ public class BaseTests {
         driver = new ChromeDriver();
         driver.get("https://the-internet.herokuapp.com/");
 
-        //1 - Maximize the window
-        //driver.manage().window().maximize();
+        // Implicit wait
+        // driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-        //2 - Fullscreen mode
-        //driver.manage().window().fullscreen();
+        // 1 - Maximize the window
+        // driver.manage().window().maximize();
 
-        //3 - Specific width (show Chrome iPhoneX emulator)
-        //Dimension size = new Dimension(375, 812);
-        //driver.manage().window().setSize(size);
+        // 2 - Fullscreen mode
+        // driver.manage().window().fullscreen();
+
+        // 3 - Specific width (show Chrome iPhoneX emulator)
+        // Dimension size = new Dimension(375, 812);
+        // driver.manage().window().setSize(size);
 
         homePage = new HomePage(driver);
         goHome();
