@@ -6,6 +6,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
@@ -17,9 +18,13 @@ import java.io.File;
 import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+//TODO Add AShot screenshot comparison
+//TODO Add other browsers (Firefox, mobiles, etc.), and how to run them at once
+//TODO Update readme: How to run from cmd
+
 public class BaseTests {
 
-//    private WebDriver driver;
+    //    private WebDriver driver;
     private EventFiringWebDriver driver;
 
     protected HomePage homePage;
@@ -29,7 +34,8 @@ public class BaseTests {
         System.setProperty("webdriver.chrome.driver", "resources/chromedriver.exe");
 
 //        driver = new ChromeDriver();
-        driver = new EventFiringWebDriver(new ChromeDriver());
+//        driver = new ChromeDriver(getChromeOptions());
+        driver = new EventFiringWebDriver(new ChromeDriver(getChromeOptions()));
         driver.register(new EventReporter());
 
         goHome();
@@ -63,10 +69,6 @@ public class BaseTests {
         homePage = new HomePage(driver);
     }
 
-    public WindowManager getWindowManager() {
-        return new WindowManager(driver);
-    }
-
     @AfterMethod
     public void recordFailure(ITestResult result) {
         if (ITestResult.FAILURE == result.getStatus()) {
@@ -84,5 +86,16 @@ public class BaseTests {
     @AfterClass
     public void tearDown() {
         driver.quit();
+    }
+
+    public WindowManager getWindowManager() {
+        return new WindowManager(driver);
+    }
+
+    private ChromeOptions getChromeOptions() {
+        ChromeOptions options = new ChromeOptions();
+        options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
+//        options.setHeadless(true);
+        return options;
     }
 }
