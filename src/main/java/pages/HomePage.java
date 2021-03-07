@@ -48,6 +48,11 @@ public class HomePage extends BasePage {
         return new KeyPressesPage(driver);
     }
 
+    public MultipleWindowsPage clickMultipleWindows(){
+        clickLink("Multiple Windows");
+        return new MultipleWindowsPage(driver);
+    }
+
     public LargeAndDeepDomPage clickLargeAndDeepDom(){
         clickLink("Large & Deep DOM");
         return new LargeAndDeepDomPage(driver);
