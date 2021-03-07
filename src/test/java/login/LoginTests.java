@@ -2,6 +2,8 @@ package login;
 
 import base.BaseTests;
 import org.testng.annotations.Test;
+import pages.ForgotPasswordPage;
+import pages.EmailSentPage;
 import pages.LoginPage;
 import pages.SecureAreaPage;
 
@@ -20,5 +22,14 @@ public class LoginTests extends BaseTests {
         assertTrue(secureAreaPage.getAlertText()
                         .contains("You logged into a secure area!"),
                 "Alert text is incorrect");
+    }
+
+    @Test
+    public void testForgotPassword() {
+        ForgotPasswordPage forgotPasswordPage = homePage.clickForgotPassword();
+
+        EmailSentPage emailSentPage = forgotPasswordPage.retrievePassword("test@test.com");
+
+        assertEquals(emailSentPage.getMessage(), "Your e-mail's been sent!", "Message is incorrect");
     }
 }

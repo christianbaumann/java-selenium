@@ -13,7 +13,7 @@ public class HomePage extends BasePage {
         driver.findElement(By.linkText(linkText)).click();
     }
 
-    public AlertsPage clickJavaScriptAlerts(){
+    public AlertsPage clickJavaScriptAlerts() {
         clickLink("JavaScript Alerts");
         return new AlertsPage(driver);
     }
@@ -23,37 +23,42 @@ public class HomePage extends BasePage {
         return new DropdownPage(driver);
     }
 
-    public DynamicLoadingPage clickDynamicLoading(){
+    public DynamicLoadingPage clickDynamicLoading() {
         clickLink("Dynamic Loading");
         return new DynamicLoadingPage(driver);
     }
 
-    public FileUploadPage clickFileUpload(){
+    public FileUploadPage clickFileUpload() {
         clickLink("File Upload");
         return new FileUploadPage(driver);
     }
 
-    public HoversPage clickHovers(){
+    public ForgotPasswordPage clickForgotPassword() {
+        clickLink("Forgot Password");
+        return new ForgotPasswordPage(driver);
+    }
+
+    public HoversPage clickHovers() {
         clickLink("Hovers");
         return new HoversPage(driver);
     }
 
-    public InfiniteScrollPage clickInfiniteScroll(){
+    public InfiniteScrollPage clickInfiniteScroll() {
         clickLink("Infinite Scroll");
         return new InfiniteScrollPage(driver);
     }
 
-    public KeyPressesPage clickKeyPresses(){
+    public KeyPressesPage clickKeyPresses() {
         clickLink("Key Presses");
         return new KeyPressesPage(driver);
     }
 
-    public MultipleWindowsPage clickMultipleWindows(){
+    public MultipleWindowsPage clickMultipleWindows() {
         clickLink("Multiple Windows");
         return new MultipleWindowsPage(driver);
     }
 
-    public LargeAndDeepDomPage clickLargeAndDeepDom(){
+    public LargeAndDeepDomPage clickLargeAndDeepDom() {
         clickLink("Large & Deep DOM");
         return new LargeAndDeepDomPage(driver);
     }
@@ -63,7 +68,7 @@ public class HomePage extends BasePage {
         return new LoginPage(driver);
     }
 
-    public WysiwygEditorPage clickWysiwygEditor(){
+    public WysiwygEditorPage clickWysiwygEditor() {
         clickLink("WYSIWYG Editor");
         return new WysiwygEditorPage(driver);
     }
