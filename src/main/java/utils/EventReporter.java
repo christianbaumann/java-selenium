@@ -72,7 +72,7 @@ public class EventReporter implements WebDriverEventListener {
 
     @Override
     public void beforeFindBy(By by, WebElement webElement, WebDriver webDriver) {
-
+        System.out.println("Finding element by: " + by);
     }
 
     @Override
@@ -102,7 +102,7 @@ public class EventReporter implements WebDriverEventListener {
 
     @Override
     public void beforeScript(String s, WebDriver webDriver) {
-
+        System.out.println("Executing script: " + s);
     }
 
     @Override
@@ -112,7 +112,7 @@ public class EventReporter implements WebDriverEventListener {
 
     @Override
     public void beforeSwitchToWindow(String s, WebDriver webDriver) {
-
+        System.out.println("Switching to window: " + webDriver.getTitle());
     }
 
     @Override
