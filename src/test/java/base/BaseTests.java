@@ -18,6 +18,7 @@ import java.util.concurrent.TimeUnit;
 //TODO Add AShot screenshot comparison
 //TODO Add other browsers (Firefox, mobiles, etc.), and how to run them at once
 //TODO Update readme: How to run from cmd
+//TODO Reporting
 
 public class BaseTests {
 

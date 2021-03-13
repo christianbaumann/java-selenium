@@ -7,6 +7,7 @@ import static org.testng.Assert.assertEquals;
 
 public class FileUploadTests extends BaseTests {
 
+    //TODO Use smaller file to decrease upload time
     @Test
     public void testFileUpload(){
         var uploadPage = homePage.clickFileUpload();
