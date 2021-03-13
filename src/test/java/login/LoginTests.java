@@ -1,6 +1,7 @@
 package login;
 
 import base.BaseTests;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 import pages.ForgotPasswordPage;
 import pages.EmailSentPage;
@@ -24,6 +25,7 @@ public class LoginTests extends BaseTests {
                 "Alert text is incorrect");
     }
 
+    @Ignore
     @Test
     public void testForgotPassword() {
         ForgotPasswordPage forgotPasswordPage = homePage.clickForgotPassword();

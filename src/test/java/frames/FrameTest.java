@@ -1,12 +1,14 @@
 package frames;
 
 import base.BaseTests;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;
 
 public class FrameTest extends BaseTests {
 
+    @Ignore
     @Test
     public void testWysiwyg() {
         String text1 = "hello ";
