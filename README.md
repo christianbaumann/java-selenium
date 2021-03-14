@@ -9,7 +9,7 @@ All tests: ``mvn test``
 
 Single test class: ``mvn test -Dtest=<ClassName>``, eg ``mvn clean test -Dtest=AlertTests``  
 
-Single test: ``mvn test -Dtest=<ClassName>``, eg ``testSuccessfullLogin``
+Single test: ``mvn test -Dtest=<ClassName>``, eg ``mvn test -Dtest=LoginTests#testSuccessfullLogin``
 
 ## Reports
 At: ``target\surefire-reports``
